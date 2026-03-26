@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>جامعة القاهرة الأهلية</title>
+
+<style>
+* {margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI';}
+
+body {
+    background:#f0f2f5;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.wrapper {
+    width:360px;
+    height:740px;
+    background:linear-gradient(#74c7c3,#1e617d);
+    border-radius:25px;
+    overflow:hidden;
+}
+
+/* login */
+#login-screen {
+    text-align:center;
+    color:white;
+    padding-top:50px;
+}
+
+.logo {
+    width:80px;height:80px;
+    background:rgba(255,255,255,0.2);
+    border-radius:50%;
+    margin:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border:2px solid white;
+}
+
+.login-card {
+    background:white;
+    margin:20px;
+    padding:20px;
+    border-radius:15px;
+}
+
+.input-box {
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+
+.btn {
+    width:100%;
+    padding:12px;
+    background:#1a4a7c;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* result */
+#result-screen {
+    display:none;
+    background:white;
+    height:100%;
+    overflow:auto;
+}
+
+.result-container {padding:10px;font-size:12px;}
+
+.top-bar {
+    background:#e6e6e6;
+    padding:8px;
+    display:flex;
+    justify-content:space-between;
+    font-size:11px;
+    border:1px solid #ccc;
+}
+
+table {width:100%;border-collapse:collapse;margin-top:10px;}
+
+th,td {
+    border:1px solid #999;
+    padding:6px;
+    text-align:center;
+}
+
+.header {background:#2f8f8f;color:white;}
+.term {background:orange;font-weight:bold;}
+
+.summary {padding:8px;margin-top:5px;font-weight:bold;}
+.yellow{background:#f4e04d;}
+.light-green{background:#b7e27c;}
+.green{background:#5fd35f;}
+
+.note {
+    text-align:center;
+    margin-top:10px;
+    font-size:11px;
+    color:blue;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<!-- LOGIN -->
+<div id="login-screen">
+    <div class="logo">CNU</div>
+    <h2>جامعة القاهرة الأهلية</h2>
+
+    <div class="login-card">
+        <input type="text" id="user" class="input-box" placeholder="Email">
+        <input type="password" id="pass" class="input-box" placeholder="Password">
+        <button class="btn" onclick="login()">تسجيل الدخول</button>
+    </div>
+</div>
+
+<!-- RESULT -->
+<div id="result-screen">
+    <div class="result-container">
+
+        <div class="top-bar">
+            <span>80250028</span>
+            <span>Osama Hossam Mohammed</span>
+            <span>GPA : 0</span>
+            <span>Total Credits : 0</span>
+        </div>
+
+        <table>
+            <tr class="header">
+                <th>Course No</th>
+                <th>Course Title</th>
+                <th>Grade</th>
+                <th>Hours</th>
+                <th>Quality Points</th>
+            </tr>
+
+            <tr class="term">
+                <td colspan="5">Fall-2025</td>
+            </tr>
+
+            <tr><td>ACT100</td><td>مقدمة في المحاسبة</td><td>D</td><td>3</td><td>0.00</td></tr>
+            <tr><td>CRT100</td><td>علم النفس</td><td>D</td><td>3</td><td>0.00</td></tr>
+            <tr><td>ECN100</td><td>الاقتصاد</td><td>D</td><td>3</td><td>0.00</td></tr>
+            <tr><td>MGT100</td><td>الإدارة</td><td>D</td><td>3</td><td>0.00</td></tr>
+            <tr><td>MGT101</td><td>السلوك التنظيمي</td><td>D</td><td>3</td><td>0.00</td></tr>
+        </table>
+
+        <div class="summary yellow">Cumulative GPA = 0</div>
+        <div class="summary light-green">Last Term GPA = 0</div>
+        <div class="summary green">Total Credits = 0</div>
+
+        <p class="note">لم يتم إعلان النتائج النهائية بعد</p>
+
+    </div>
+</div>
+
+</div>
+
+<script>
+function login() {
+    let user = document.getElementById("user").value;
+    let pass = document.getElementById("pass").value;
+
+    if(user === "osamahossam.edu@gmail.com" && pass === "3741954"){
+        document.getElementById("login-screen").style.display = "none";
+        document.getElementById("result-screen").style.display = "block";
+    } else {
+        alert("البيانات غير صحيحة ❌");
+    }
+}
+</script>
+
+</body>
+</html>
